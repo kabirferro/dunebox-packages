@@ -11,7 +11,7 @@ Open source (MIT), built for **Laravel and PHP** developers on Windows.
 ## ✨ What it does
 
 ### 🐘 Every PHP version, together
-PHP **5.4, 7.4, 8.2, 8.3 and 8.5** run side by side, always. The legacy project stays on 5.4, the new one runs on 8.5 — at the same time, no switching, no restarts. Each site picks its version with one click.
+PHP **5.4, 7.4, 8.2, 8.3 and 8.5** run side by side, always. The legacy project stays on 5.4, the new one runs on 8.5 — at the same time, no switching, no restarts. Each site picks its version with one click. Every version ships with the extensions real projects need already on — **Imagick** and **GD** for images, **intl**, **OPcache**, **mbstring**, **cURL**, and **PDO** for MySQL, PostgreSQL and SQLite.
 
 ### 🌐 A local domain for every project
 `mysite.test` in seconds: choose a name, a folder and a PHP version — Dunebox generates the virtual host, updates the Windows hosts file and the certificate. Aliases and multiple domains included.
@@ -23,7 +23,16 @@ SSL certificate generated and **automatically trusted** by the system: your `.te
 Every email sent from PHP lands in a **local inbox** ([Mailpit](http://mailpit.localhost)) with HTML preview, source and live updates. Zero configuration, zero test emails accidentally sent to real clients.
 
 ### 🗄️ Databases ready to go
-**MySQL** with [phpMyAdmin](http://phpmyadmin.localhost) and **Redis** with [phpRedisAdmin](http://phpredisadmin.localhost), already wired up and reachable from the browser. Your data stays yours, in a folder you choose — it survives updates and reinstalls.
+**MySQL** with [phpMyAdmin](http://phpmyadmin.localhost) and **Redis** with [phpRedisAdmin](http://phpredisadmin.localhost), already wired up and reachable from the browser. Need something else? **PostgreSQL** and **MongoDB** are one toggle away. Your data stays yours, in a folder you choose — it survives updates and reinstalls.
+
+Ready-to-use credentials, created automatically on first launch:
+
+| Database | Host | Port | User | Password |
+|---|---|---|---|---|
+| MySQL | `127.0.0.1` | `3306` | `dunebox` (or `root`) | `secret` |
+| PostgreSQL | `127.0.0.1` | `5432` | `dunebox` (or `postgres`) | `secret` |
+
+Point your app's `.env` at `127.0.0.1` with user `dunebox` and password `secret` and you're connected.
 
 ### ⏰ Built-in cron
 Drop a `dunebox.cron` file in your project (classic crontab syntax) and Dunebox runs your jobs — `php artisan schedule:run`, backups, whatever you need — with the project's correct PHP version. The file travels with the project in git: your teammates inherit it. And for system jobs there's the global scheduler.
@@ -37,7 +46,7 @@ Drop a `dunebox.cron` file in your project (classic crontab syntax) and Dunebox 
 A graphical interface with service status at a glance, host management, quick access to tools, logs one click away. It lives in the system tray: close the window and the services keep running.
 
 ### 🧰 The toolbox, one click away
-**Git, Node.js, Python and Composer** install (and update) straight from Dunebox, which notifies you when a new version is out.
+**Git, Node.js, Python, Composer and FFmpeg** install (and update) straight from Dunebox, which notifies you when a new version is out. They become global commands on your PC, available in any terminal.
 
 ### 📦 Install only what you need
 Don't use Redis? Turn it off. Every component toggles on and off individually, and dependencies resolve themselves. Want a PHP version that isn't on the list? Add it with one line of configuration — no need to wait for an update.
@@ -97,7 +106,7 @@ Nothing to uninstall: to remove Dunebox, just delete the folder.
 
 ## 📦 What's inside
 
-Apache · PHP 5.4 / 7.4 / 8.2 / 8.3 / 8.5 · MySQL · Redis · Mailpit · phpMyAdmin · phpRedisAdmin — all open source or freeware. Git, Node.js, Python and Composer can be added with one click from the wizard or the Settings.
+Apache (or nginx) · PHP 5.4 / 7.4 / 8.2 / 8.3 / 8.5 · MySQL — with PostgreSQL and MongoDB optional · Redis · Mailpit · phpMyAdmin · phpRedisAdmin — all open source or freeware. Git, Node.js, Python, Composer and FFmpeg can be added (and removed) with one click from the wizard or the Settings.
 
 ---
 
